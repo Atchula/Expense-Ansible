@@ -15,6 +15,7 @@
    state : latest
   loop :
      - PyMySQL
+     - cryptography
      
 - name : "Check Connection With Server"
   community.mysql.mysql_info :
