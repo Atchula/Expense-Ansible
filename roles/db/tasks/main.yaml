@@ -13,7 +13,7 @@
   ansible.builtin.pip:
    name : "{{item}}"
    state : installed
-   loop :
+  loop :
      - PyMySQL
      
 - name : "Check Connection With Server"
