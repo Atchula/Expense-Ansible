@@ -27,6 +27,7 @@
 - name : Import Common Role
   ansible.builtin.import_role:
    name : common
+   tasks_from: apppre.yaml
    
 
 - name : Installing Dependencies For node App
