@@ -1,0 +1,7 @@
+- name : SettingUp App
+  hosts : all
+  become : yes
+  roles :
+   - db
+   - backend
+   - frontend
