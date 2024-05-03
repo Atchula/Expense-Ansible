@@ -29,11 +29,12 @@
   ansible.builtin.template :
    src : expense.conf.j2
    dest : /etc/nginx/default.d/expense.conf
-
-- name : Start And Enable nginx
-  ansible.builtin.systemd_service :
-   name : nginx
-   state : restarted
+  notify :
+   - name : Restart nginx
+# - name : Restart nginx
+#   ansible.builtin.systemd_service :
+#    name : nginx
+#    state : restarted
    
     
   
