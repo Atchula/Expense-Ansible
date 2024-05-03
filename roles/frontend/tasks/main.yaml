@@ -3,7 +3,11 @@
    name : nginx
    state : latest
 
-
+- name : Start And Enable nginx
+  ansible.builtin.systemd_service :
+   name : nginx
+   state : started
+   enabled : yes
 
 - name : Remove Html Dir
   ansible.builtin.file :
@@ -29,7 +33,7 @@
 - name : Start And Enable nginx
   ansible.builtin.systemd_service :
    name : nginx
-   state : started
-   enabled : yes
+   state : restarted
+   
     
   
