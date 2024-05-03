@@ -1,7 +1,9 @@
 - name : SettingUp App
-  hosts : all
   become : yes
+  hosts : "{{item}}"
   roles :
-   - db
+   - "{{item}}"
+  loop :
+   - db 
    - backend
    - frontend
