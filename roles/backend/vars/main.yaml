@@ -2,3 +2,5 @@ db_host : 172.31.20.41
 superuser : root
 superuserpass : ExpenseApp@1
 loginhost : 172.31.20.41
+app_location : /app
+urlv : https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip

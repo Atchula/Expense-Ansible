@@ -1,0 +1,10 @@
+- name : Creating Location /app To Store Code
+  ansible.builtin.file:
+   path : "{{app_location}}"
+   state : directory  
+
+- name : Download and Unarchive Code To /app 
+  ansible.builtin.unarchive :
+   src: "{{urlv}}"
+   dest : "{{app_location}}"
+   remote_src : yes

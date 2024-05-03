@@ -14,17 +14,21 @@
    path : /usr/share/nginx/html
    state : absent
 
-- name : Create Html Dir
-  ansible.builtin.file :
-   path : /usr/share/nginx/html
-   state : directory
+# - name : Create Html Dir
+#   ansible.builtin.file :
+#    path : /usr/share/nginx/html
+#    state : directory
 
-- name : Download and Unarchive Code
-  ansible.builtin.unarchive:
-    src : https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest : /usr/share/nginx/html
-    remote_src: yes
+# - name : Download and Unarchive Code
+#   ansible.builtin.unarchive:
+#     src : https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest : /usr/share/nginx/html
+#     remote_src: yes
 
+- name : Import Common Role
+  ansible.builtin.import_role:
+   name : common
+    
 - name : Copy Expense Config File
   ansible.builtin.template :
    src : expense.conf.j2
