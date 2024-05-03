@@ -3,11 +3,7 @@
    name : nginx
    state : latest
 
-- name : Start And Enable nginx
-  ansible.builtin.systemd_service :
-   name : nginx
-   state : started
-   enabled : yes
+
 
 - name : Remove Html Dir
   ansible.builtin.file :
@@ -30,9 +26,10 @@
    src : expense.conf.j2
    dest : /etc/nginx/default.d/expense.conf
 
-- name : Restart nginx
+- name : Start And Enable nginx
   ansible.builtin.systemd_service :
    name : nginx
-   state : restarted
+   state : started
+   enabled : yes
     
   
