@@ -47,10 +47,10 @@
    - PyMySQL
   
 
- - name : Connect MySQL
+- name : Connect MySQL
    community.mysql.mysql_db :
-    login_user  :
-    login_password :
-    login_host  : 
+    login_user  : "{{superuser}}"
+    login_password : "{{superuserpass}}"
+    login_host  :  "{{loginhost}}"
     name : all
     state : import    
