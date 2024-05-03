@@ -21,8 +21,8 @@
    login_user: "{{superuser}}"
    login_password:  "{{superuserpass}}"
    filter: version
-   register : sqlerr
-   ignore_errors : yes
+  register : sqlerr
+  ignore_errors : yes
 
 - name : "Set Root Password"
   ansible.builtin.command : "mysql_secure_installation --set-root-pass {{superuserpass}}"
