@@ -1,9 +1,12 @@
 - name : SettingUp App
   become : yes
-  hosts : "{{item}}"
-  roles :
-   - "{{item}}"
-  loop :
-   - db 
-   - backend
-   - frontend
+   
+  tasks :
+   - name : "App"
+     hosts : "{{item}}"
+     roles :
+       - "{{item}}"
+     loop :
+       - db 
+       - backend
+       - frontend
