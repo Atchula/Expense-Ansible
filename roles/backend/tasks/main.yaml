@@ -43,9 +43,13 @@
     state : latest
     executable : pip3.9
   loop :
-   - mysql
    - PyMySQL
    - cryptography
+
+- name : Install MYSQL
+  ansible.builtin.dnf :
+   name : mysql
+   state : latest
   
 
 - name : Connect MySQL
